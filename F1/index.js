@@ -1,37 +1,32 @@
+'use strict';
+// help us to avoid error
+// provide to us where the error
 
-// let markWeight = 78;
-// let markHight = 1.69
+// let hasDriversLicense = false
+// const passTest = true;
 
-// let johnHight = 1.95;
-// let johnWeight = 92;
+// if (passTest) hasDriverLicense = true
+// if (hasDriversLicense) console.log("I Can Drive");
 
-// let markMass = markWeight / markHight ** 2 / (markHight * markHight);
-// let johnMass = johnWeight / johnHight ** 2 / (johnHight * johnHight);
-// // console.log(`Mark's Mass is ${markMass}`);
-// // console.log(`John's Mass is ${johnMass}`);
+// const interface =  "Audio"; // Unexpected strict mode reserved word
+// const private = 534; // SyntaxError: Unexpected strict mode reserved word
 
-
-// if(markMass>johnMass){
-//     console.log(`Mark's BMI is higher than John's!"`);
-//     console.log(`Mark's BMI ${markMass} is higher than John's ${johnMass}!`)
-// }else{
-//     console.log(`John's BMI is higher than Mark's!`)
-//     console.log(`John's BMI ${johnMass} is higher than Mark's ${markMass}!`)
+// function can recive data and send data back
+// function logger(name){
+//     // function body
+//     console.log(`Hello My Name is ${name}`);
 // }
+// logger("Emad") // invoking a function
+// logger("Max") // calling the function
+// logger("Ahmed") // running the function
 
-// let tip =15/100;
-// if the value between 50 and 300  --> tip 15%
-// if the vaue is diffenent tip --> 20%
+// function fruitProcessor(apples,oranges){
+//     console.log(apples , oranges );
+//     const juice = `juice with ${apples} apples and ${oranges} oranges`
+//     return juice;
+// }
+// const appleJuice = fruitProcessor(5,0);
+// console.log(appleJuice);
 
-
-// let a = 100
-// let x = a * (25/100)
-// console.log(x);
-let bill = 275; 
-let tip;
-let tipValue = bill >= 50 && bill <=300 ? tip=15/100 : tip=20/100;
-let result = bill >= 50 && bill <=300 ? `The bill was ${bill} , the tip was ${bill*tipValue}, and the total value 
-${bill+ (bill*tipValue)}` : `The bill was ${bill} , the tip was ${bill*tipValue}, and the total value 
-${bill+ (bill*tipValue)}`
-console.log(result);
-
+let names = new Array("Emad" , "Ahmed" , "Ehab")
+console.log(names);
