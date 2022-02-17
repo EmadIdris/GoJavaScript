@@ -1,32 +1,104 @@
 'use strict';
-// help us to avoid error
-// provide to us where the error
 
-// let hasDriversLicense = false
-// const passTest = true;
+// // scoppe chain
+// function calcAge(birthYear){
+//     const age = 2022 - birthYear;
+//     function printAge(){
+//         const outPut = ` ${firstName},  You are ${age} born in ${birthYear}` // firstName in global scope
+//         console.log(outPut);
 
-// if (passTest) hasDriverLicense = true
-// if (hasDriversLicense) console.log("I Can Drive");
-
-// const interface =  "Audio"; // Unexpected strict mode reserved word
-// const private = 534; // SyntaxError: Unexpected strict mode reserved word
-
-// function can recive data and send data back
-// function logger(name){
-//     // function body
-//     console.log(`Hello My Name is ${name}`);
+//         if(birthYear >= 1981 && birthYear <= 1996)
+//         {
+//             // new block scope
+//             const str = `Oh, and you are a millenial ${firstName}`
+//             console.log(str);
+//             function add(a,b){
+//                 return a+b
+//             }
+//         }
+//         // console.log(str); // not defined bc block scope var is open scope
+//         // add(2,3) // add is not defined bc use strict
+//     }
+//     printAge();
+//     return age;
 // }
-// logger("Emad") // invoking a function
-// logger("Max") // calling the function
-// logger("Ahmed") // running the function
+// // console.log(age); // not defined out of scope
+// const firstName = "Emad" // global veriable
+// calcAge(1998)
+// // printAge() // not defined out of scope
 
-// function fruitProcessor(apples,oranges){
-//     console.log(apples , oranges );
-//     const juice = `juice with ${apples} apples and ${oranges} oranges`
-//     return juice;
+// hoisting and TDZ
+
+// console.log(me);  // undefined
+// console.log(job); // Cannot access 'job' before initialization
+// console.log(year); //Cannot access 'year' before initialization
+
+// var me = "Emad"
+// let job = "Software Engineer"
+// const year = 1998;
+
+// funcrion 
+// console.log(addDecl(2,3)); // 5
+// console.log(addExpr(2,4)); //Cannot access 'addExpr' before initialization
+// console.log(addArrow(2,5));//Cannot access 'addArrow' before initialization
+//  // if we use Var instead of const "addArrow is not a function" // undefined
+
+// // declartion 
+// function addDecl(a,b){
+//     return a+b
 // }
-// const appleJuice = fruitProcessor(5,0);
-// console.log(appleJuice);
+// //expression
+// const addExpr = function(a,b){
+//     return a+b
+// }
+// // arrow function
+// const addArrow = (a,b)=>{ a+b }
 
-let names = new Array("Emad" , "Ahmed" , "Ehab")
-console.log(names);
+// //----------------------
+
+// this keyword
+
+// console.log(this);
+
+// const calcAge  = function(birthYear){
+//     console.log(2022-birthYear);
+//     console.log(this); // undefined
+// }
+// calcAge(1998)
+
+// const calcAgeArrow  = (birthYear) => {
+//     console.log(2022-birthYear);
+//     console.log(this); // window
+// }
+// calcAgeArrow(1998)
+
+// const Emad = {
+//     Year : 1998,
+//     calcAge : function(){
+//         console.log(this); // This ->  Emad's Object
+//         console.log(2023 - this.Year);
+//     }
+// }
+// Emad.calcAge()
+
+// const matilda = {
+//     Year : 2017,
+// }
+// matilda.calcAge = Emad.calcAge // method borrowing
+// matilda.calcAge()
+
+// const f = Emad.calcAge;
+// console.log(f); // function
+
+// f()
+ // object literal
+const Emad = {
+    firstName : "Emad" ,
+    Year : 1998,
+    calcAge : function(){
+        console.log(this); // This ->  Emad's Object
+        console.log(2023 - this.Year);
+    },
+    greet : () => console.log(`Hello ${this.firstName}`) // undefined // its a global scope
+}
+Emad.greet()
